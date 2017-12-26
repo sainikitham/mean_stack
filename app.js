@@ -9,7 +9,7 @@ const config = require('./config/database')
 mongoose.connect(config.database);
 //on connection
 mongoose.connection.on('connected', () => {
-  console.log('connected to database'+config.database);
+  console.log('connected to database....'+config.database);
 });
 //on error
 mongoose.connection.on('error', (err) => {
@@ -33,5 +33,5 @@ app.get('/',(req, res) => {
   res.send('invalid endpoint');
 });
 app.listen(port, () => {
-  console.log("server started");
+  console.log("server started at "+port);
 });
