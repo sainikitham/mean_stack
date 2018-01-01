@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
      this._AuthService.registerUser(user).subscribe(data => {
        // tslint:disable-next-line:whitespace
        if(data.success) {
-        this._flashMessagesService.show('you are registerd and can login now!', { cssClass: 'alert-success', timeout: 2000 });
+        this._flashMessagesService.show('you are Registered and can login now!', { cssClass: 'alert-success', timeout: 2000 });
         this.router.navigate(['/login']);
        }else {
         this._flashMessagesService.show('something went wrong!', { cssClass: 'alert-danger', timeout: 2000 });
