@@ -11,13 +11,13 @@ export class AuthService {
   registerUser(user) {
    const headers = new Headers();
    headers.append('Content-type', 'application/json');
-   return this._Http.post('http://localhost:3000/users/register', user, {headers: headers})
+   return this._Http.post('users/register', user, {headers: headers})
    .map(res => res.json());
   }
   authenticateUser(user) {
    const headers = new Headers();
    headers.append('Content-type', 'application/json');
-   return this._Http.post('http://localhost:3000/users/authenticate', user, {headers: headers})
+   return this._Http.post('users/authenticate', user, {headers: headers})
    .map(res => res.json());
   }
   storeUserData(token, user) {
@@ -31,7 +31,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authtoken);
     headers.append('Content-Type', 'application/json');
-    return this._Http.get('http://localhost:3000/users/profile', {headers: headers})
+    return this._Http.get('users/profile', {headers: headers})
     .map(res => res.json());
   }
   loadToken() {

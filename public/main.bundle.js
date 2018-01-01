@@ -714,13 +714,13 @@ var AuthService = (function () {
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this._Http.post('http://localhost:3000/users/register', user, { headers: headers })
+        return this._Http.post('users/register', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this._Http.post('http://localhost:3000/users/authenticate', user, { headers: headers })
+        return this._Http.post('users/authenticate', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
@@ -734,7 +734,7 @@ var AuthService = (function () {
         this.loadToken();
         headers.append('Authorization', this.authtoken);
         headers.append('Content-Type', 'application/json');
-        return this._Http.get('http://localhost:3000/users/profile', { headers: headers })
+        return this._Http.get('users/profile', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.loadToken = function () {
